@@ -4,6 +4,7 @@ from urllib.parse import urljoin, urlparse
 import json
 import argparse
 import logging
+import time
 
 
 # Configure logging to suppress lower level messages
@@ -61,4 +62,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     extract_links(args.url, args.output)
+
+    # Sleep forever to keep the container running
+    while True:
+        time.sleep(86400)  # Sleep for 24 hours
 
